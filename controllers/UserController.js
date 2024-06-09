@@ -86,6 +86,7 @@ const updateUser = async (req, res) => {
             data: {
                 name: req.body.name,
                 status: req.body.status,
+                picture: req.body.picture,
             },
         });
 

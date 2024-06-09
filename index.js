@@ -6,9 +6,11 @@ const router = require('./routes')
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, '/uploads')
+    cb(null, 'uploads/profile')
   },
   filename: function (req, file, cb) {
+      const { userName } = req.params
+
       var getFileExt = function(fileName){
         var fileExt = fileName.split(".");
         if (fileExt.length === 1 || ( fileExt[0] === "" && fileExt.length === 2)) {
@@ -16,7 +18,7 @@ const storage = multer.diskStorage({
         }
         return fileExt.pop();
       }
-      cb(null, Date.now() + '.' + getFileExt(file.originalname))
+      cb(null, String(userName) + '-' + file.fieldname + '.' + getFileExt(file.originalname))
   }
 })
 
@@ -38,7 +40,7 @@ app.get('/', (req, res) => {
 app.use('/', router)
 
 //send image
-app.post('/upload', type, function(req, res) {
+app.post('/upload/profile/:userName', type, function(req, res) {
   res.json(req.file)
 })
 
