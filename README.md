@@ -11,6 +11,7 @@ This backend side app is created with its dependencies:
 - Cors
 - Prisma ORM
 - JSON Web Token
+- Multer
 - mySQL
 
 In order to run the backend server, simply run this on terminal:
@@ -27,3 +28,5 @@ nodemon index
 - **PUT /users/:userName** - Used to update user's data.
 - **GET /message/:sender&:receiver** - Used to fetch all messages related to sender and receiver.
 - **POST /message/:sender/:receiver** - Used to send one message to receiver.
+- **POST /upload/profile/:userName** - Used to send image to server.
+- **GET /download/profile/** - Used to download image from server.
