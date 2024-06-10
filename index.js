@@ -44,6 +44,9 @@ app.post('/upload/profile/:userName', type, function(req, res) {
   res.json(req.file)
 })
 
+//fetch image
+app.use('/download/profile', express.static(__dirname + '/uploads/profile'))
+
 //start server
 app.listen(port, () => {
     console.log(`Server started on port ${port}`);
