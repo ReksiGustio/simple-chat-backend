@@ -18,6 +18,7 @@ const fetchMessage = async (req, res) => {
                 userRelated: true,
                 text: true,
                 image: true,
+                read: true,
                 date: true,
             },
         });
@@ -70,4 +71,37 @@ const sendMessage = async (req, res) => {
     }
 };
 
-module.exports = { fetchMessage, sendMessage };
+//function update message
+const updateMessage = async (req, res) => {
+
+    //get ID from params
+    const { id } = req.params;
+
+    try {
+
+        //update message
+        const readValue = await prisma.message.update({
+            where: {
+                id: Number(id),
+            },
+            data: {
+                read: req.body.read,
+            },
+        });
+
+        //send response
+        res.status(200).send({
+            success: true,
+            message: 'Message updated successfully',
+            data: readValue,
+        });
+
+    } catch (error) {
+        res.status(500).send({
+            success: false,
+            message: "Internal server error",
+        });
+    }
+};
+
+module.exports = { fetchMessage, sendMessage, updateMessage };

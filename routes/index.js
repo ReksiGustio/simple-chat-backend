@@ -18,6 +18,7 @@ router.get('/users/:userName', verifyToken, userController.findUserByUsername);
 router.put('/users/:userName', verifyToken, userController.updateUser);
 router.get('/message/:sender&:receiver', verifyToken, messageController.fetchMessage);
 router.post('/message/:sender&:receiver', verifyToken, messageController.sendMessage);
+router.put('/message/:id', verifyToken, messageController.updateMessage);
 
 //export router
 module.exports = router

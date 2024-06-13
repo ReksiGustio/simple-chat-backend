@@ -28,6 +28,7 @@ model Message {
   userRelated   String    
   text          String?
   image         String?
+  read          String      @default("unread")
   date          DateTime    @default(now())
 
   @@fulltext([userRelated])

@@ -49,3 +49,12 @@ Content-Type: application/json
 {
     "message": "halo juga"
 }
+
+###UPDATE user
+PUT http://localhost:3000/message/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzE3Njg0NDY3LCJleHAiOjE3MTgyODkyNjd9.Y_KBxM3CddxFZILXw0b2il4XtiVL8AfKBk_VUvOf8qk
+Content-Type: application/json
+
+{
+    "read": "read"
+}
