@@ -51,8 +51,8 @@ Content-Type: application/json
 }
 
 ###UPDATE user
-PUT http://localhost:3000/message/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzE3Njg0NDY3LCJleHAiOjE3MTgyODkyNjd9.Y_KBxM3CddxFZILXw0b2il4XtiVL8AfKBk_VUvOf8qk
+PUT http://localhost:3000/message/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzE4NDIwMzE2LCJleHAiOjE3MTkwMjUxMTZ9.2ZVM8vbMGCmaPk0PAlAsb245t5tZp4AMWcy402CkbPM
 Content-Type: application/json
 
 {
